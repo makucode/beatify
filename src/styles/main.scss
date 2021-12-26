@@ -1,0 +1,22 @@
+@import "./globals";
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: $dark;
+}
+
+// App
+
+.App {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    /*     background-color: $light; */
+}

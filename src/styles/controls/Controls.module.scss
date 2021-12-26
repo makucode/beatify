@@ -1,0 +1,8 @@
+@import "../globals";
+
+.Controls {
+    height: $sectionsL;
+    width: $sectionsL;
+    display: grid;
+    background-color: $light;
+}

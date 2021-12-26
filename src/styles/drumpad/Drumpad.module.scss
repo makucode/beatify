@@ -1,0 +1,25 @@
+@import "../globals";
+
+.Drumpad {
+    width: max-content;
+    height: max-content;
+    background-color: $light;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.DrumpadKey,
+.DrumpadName {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0.5rem;
+}
+
+.DrumpadName {
+    font-size: 1rem;
+}
