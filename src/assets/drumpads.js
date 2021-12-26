@@ -5,7 +5,7 @@ export const pads = [
     { name: "Crash", padKey: "4", sound: "soundFile" },
     { name: "Kick", padKey: "q", sound: "soundFile" },
     { name: "Snare", padKey: "w", sound: "soundFile" },
-    { name: "Clap", Clap: "e", sound: "soundFile" },
+    { name: "Clap", padKey: "e", sound: "soundFile" },
     { name: "808", padKey: "r", sound: "soundFile" },
     { name: "Kick", padKey: "a", sound: "soundFile" },
     { name: "Kick", padKey: "s", sound: "soundFile" },

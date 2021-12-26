@@ -1,0 +1,20 @@
+@import "../../globals";
+
+.Sequencer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr 1fr 1fr 1fr);
+    grid-template-rows: 1fr;
+    gap: 0px 0.5rem;
+    height: 34px;
+}
+
+.Step {
+    border-radius: $radiusL;
+    border: $borderNormal;
+    border-color: $borderColor;
+    cursor: pointer;
+}
+
+.StepActive {
+    background-color: $light;
+}

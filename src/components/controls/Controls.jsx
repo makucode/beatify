@@ -1,8 +1,17 @@
 import React from "react";
 import styles from "../../styles/controls/Controls.module.scss";
+import Display from "./Display";
+import Transport from "./Transport";
 
 const Controls = () => {
-    return <div className={styles.Controls}></div>;
+    return (
+        <div className={styles.Controls}>
+            <Display />
+            <Transport />
+            <Transport />
+            <Transport />
+        </div>
+    );
 };
 
 export default Controls;

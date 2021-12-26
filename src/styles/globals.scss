@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
+
+// Fonts
+
+$sans: "Lato", sans-serif;
+
 // Colors
 
 $light: #e5e5e5;
@@ -6,7 +12,7 @@ $dark: #1a1a1a;
 // Borders
 
 $borderColor: rgb(213, 220, 226) rgb(213, 220, 226) rgb(184, 194, 204);
-$borderNormal: 1px solid;
+$borderNormal: 2px solid;
 $radiusL: 10px;
 
 // Section Sizes
@@ -14,3 +20,11 @@ $radiusL: 10px;
 $sectionsL: 520px;
 $maschineWL: 1200px;
 $maschineHL: 600px;
+
+// Transitions
+
+$transNormal: all ease-in-out 0.1s;
+
+// Shadows
+
+$glow: 0px 0px 15px -3px rgba(255, 243, 202, 0.5);
