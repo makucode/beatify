@@ -1,6 +1,7 @@
 # Maschine
 
 This project was built with React and SASS as a [freeCodeCamp project](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-drum-machine).
+The drum samples I used are from [808 Trapstep Vol. 2](https://trisamples.com/808-trapstep-pack-vol-2/).
 
 **Contact me: [makucode@gmail.com](makucode@gmail.com)**
 
