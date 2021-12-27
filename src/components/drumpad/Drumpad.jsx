@@ -1,14 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import useSound from "use-sound";
 import styles from "../../styles/drumpad/Drumpad.module.scss";
 
 const Drumpad = ({ name, padKey, sound, color }) => {
     const [clicked, setClicked] = useState(false);
 
-    const play = (e) => {
-        console.log("KEY");
+    const [playSound] = useSound(sound, { volume: 0.25 });
+
+    const play = () => {
+        playSound();
         setClicked(true);
         setTimeout(() => setClicked(false), 100);
     };
+
+    useEffect(() => {
+        document.addEventListener("keydown", (e) => {
+            if (padKey.includes(e.key)) play();
+        });
+    }, [padKey]);
 
     return (
         <div

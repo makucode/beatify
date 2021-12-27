@@ -5,12 +5,6 @@ import { colors } from "../../assets/colors";
 import { pads } from "../../assets/drumpads";
 
 const Drumpads = () => {
-    useEffect(() => {
-        document.addEventListener("keydown", (e) => {
-            console.log(pads.filter((pad) => pad.padKey === e.key)[0].padKey);
-        });
-    }, []);
-
     return (
         <div className={styles.Drumpads}>
             <div className={styles.DrumpadsGrid}>

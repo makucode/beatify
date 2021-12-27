@@ -23,8 +23,9 @@ const Sequencer = () => {
 
     return (
         <div className={styles.Sequencer}>
-            {sequence.map((step) => (
+            {sequence.map((step, idx) => (
                 <span
+                    key={idx}
                     className={
                         styles.Step + " " + (!step ? "" : styles.StepActive)
                     }
