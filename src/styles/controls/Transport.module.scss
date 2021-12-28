@@ -23,3 +23,11 @@
         width: 20px;
     }
 }
+
+.TransportVolume {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    color: $light;
+}

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { SelectedDrumContext } from "../../contexts/SelectedDrumContext";
 import useBpm from "../../hooks/useBpm";
 import styles from "../../styles/controls/Display.module.scss";
 import ChevronIcon from "../icons/ChevronIcon";
@@ -6,6 +7,7 @@ import Sequencer from "./display/Sequencer";
 
 const Display = () => {
     const [bpm, setBpm] = useBpm();
+    const { selectedDrum, setSelectedDrum } = useContext(SelectedDrumContext);
 
     return (
         <section className={styles.Display}>
@@ -24,6 +26,7 @@ const Display = () => {
                     <ChevronIcon onClick={() => setBpm(bpm - 1)} />
                 </span>
             </div>
+            <span className={styles.DisplayDrum}>{selectedDrum.full}</span>
             <Sequencer />
         </section>
     );

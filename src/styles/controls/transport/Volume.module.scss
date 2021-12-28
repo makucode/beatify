@@ -1,0 +1,9 @@
+@import "../../globals";
+
+.Volume {
+    width: 55px;
+    height: 55px;
+    border: $borderNormal;
+    border-color: $borderColor;
+    border-radius: 50px;
+}
