@@ -2,6 +2,36 @@
 
 .Sequencer {
     display: grid;
+    grid-template-columns: repeat(1fr);
+    grid-template-rows: 1fr;
+}
+
+.SequencerPointer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr 1fr 1fr 1fr);
+    grid-template-rows: 1fr;
+    justify-items: center;
+    gap: 0px 0.5rem;
+    height: 10px;
+    margin-bottom: 0.7rem;
+}
+
+.PointerStep {
+    border-radius: 100px;
+    border: $borderNormal;
+    border-color: $borderColor;
+    height: 7px;
+    width: 7px;
+}
+
+.PointerStepActive {
+    background-color: $green;
+    color: $green;
+    border-color: $green;
+}
+
+.SequencerSequence {
+    display: grid;
     grid-template-columns: repeat(4, 1fr 1fr 1fr 1fr);
     grid-template-rows: 1fr;
     gap: 0px 0.5rem;
@@ -17,4 +47,8 @@
 
 .StepActive {
     background-color: $light;
+}
+
+.StepActive.FirstBeat::after {
+    background-color: $dark !important;
 }
