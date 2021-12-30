@@ -9,10 +9,25 @@
     gap: 1.5rem;
 }
 
-.Transport button {
-    background-color: transparent;
+.TransportButtonWrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+}
+
+.TransportButton {
     box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+    background-color: transparent;
     color: $light;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 0.5rem;
 
     border-radius: $radiusL;
     border: $borderNormal;
@@ -20,8 +35,19 @@
 
     svg {
         fill: $light;
-        width: 20px;
+        width: 14px;
     }
+}
+
+.ButtonLabel {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    color: $light;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 .TransportVolume {

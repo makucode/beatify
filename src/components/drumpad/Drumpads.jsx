@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "../../styles/drumpad/Drumpads.module.scss";
 import Drumpad from "./Drumpad";
 import { colors } from "../../assets/colors";

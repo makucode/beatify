@@ -12,9 +12,8 @@ const Drumpad = ({ name, padKey, sound, color, full }) => {
     const [playSound] = useSound(sound, { volume: 0.25 });
 
     const play = () => {
-        playSound();
         setClicked(true);
-        console.log(padKey);
+        playSound();
         setTimeout(() => setClicked(false), 100);
     };
 

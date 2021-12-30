@@ -8,8 +8,6 @@ const Controls = () => {
         <div className={styles.Controls}>
             <Display />
             <Transport />
-            <Transport />
-            <Transport />
         </div>
     );
 };

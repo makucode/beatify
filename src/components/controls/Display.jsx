@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import { SelectedDrumContext } from "../../contexts/SelectedDrumContext";
+import { SequencerContext } from "../../contexts/SequencerContext";
 import useBpm from "../../hooks/useBpm";
 import styles from "../../styles/controls/Display.module.scss";
 import ChevronIcon from "../icons/ChevronIcon";
 import Sequencer from "./display/Sequencer";
 
 const Display = () => {
-    const [bpm, setBpm] = useBpm();
+    const { bpm, setBpm } = useContext(SequencerContext);
     const { selectedDrum, setSelectedDrum } = useContext(SelectedDrumContext);
 
     return (

@@ -27,7 +27,7 @@ export const pads = [
     { name: "Kick", full: "Kick 3", padKey: "a", sound: kick3 },
     { name: "Clap", full: "Clap 1", padKey: "s", sound: clap1 },
     { name: "Perc", full: "Percussion 1", padKey: "d", sound: perc1 },
-    { name: "808", full: "808 Bass", adKey: "f", sound: bass },
+    { name: "808", full: "808 Bass", padKey: "f", sound: bass },
     { name: "Kick", full: "Kick 4", padKey: "y", sound: kick4 },
     { name: "Clap", full: "Clap 2", padKey: "x", sound: clap2 },
     { name: "Perc", full: "Percussion 2", padKey: "c", sound: perc2 },
