@@ -23,7 +23,7 @@ export const SequencerProvider = ({ children }) => {
         v: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     });
     const [position, setPosition] = useState(0);
-    const [isPlaying, setIsPlaying] = useState(true);
+    const [isPlaying, setIsPlaying] = useState(false);
     const [bpm, setBpm] = useBpm();
 
     const [intervalID, setIntervalID] = useState("");

@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import { SequencerContext } from "../../contexts/SequencerContext";
 import styles from "../../styles/controls/Transport.module.scss";
-import ChevronIcon from "../icons/ChevronIcon";
+import PauseIcon from "../icons/PauseIcon";
+import PlayIcon from "../icons/PlayIcon";
+import StopIcon from "../icons/StopIcon";
 import Volume from "./transport/Volume";
 
 const Transport = () => {
@@ -11,31 +13,31 @@ const Transport = () => {
         <div className={styles.Transport}>
             <div className={styles.TransportButtonWrapper}>
                 <button
-                    className={styles.TransportButton}
+                    className={styles.TransportButton + " " + styles.Play}
                     onClick={() => setIsPlaying(true)}
                 >
-                    <ChevronIcon />
+                    <PlayIcon />
                 </button>
                 <span className={styles.ButtonLabel}>Play</span>
             </div>
             <div className={styles.TransportButtonWrapper}>
                 <button
-                    className={styles.TransportButton}
+                    className={styles.TransportButton + " " + styles.Pause}
                     onClick={() => setIsPlaying(false)}
                 >
-                    <ChevronIcon />
+                    <PauseIcon />
                 </button>
                 <span className={styles.ButtonLabel}>Pause</span>
             </div>
             <div className={styles.TransportButtonWrapper}>
                 <button
-                    className={styles.TransportButton}
+                    className={styles.TransportButton + " " + styles.Stop}
                     onClick={() => {
                         setIsPlaying(false);
                         setPosition(0);
                     }}
                 >
-                    <ChevronIcon />
+                    <StopIcon />
                 </button>
                 <span className={styles.ButtonLabel}>Stop</span>
             </div>

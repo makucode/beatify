@@ -5,7 +5,8 @@ import styles from "../../../styles/controls/display/Sequencer.module.scss";
 
 const Sequencer = () => {
     const { selectedDrum } = useContext(SelectedDrumContext);
-    const { tracks, setTracks, position } = useContext(SequencerContext);
+    const { tracks, setTracks, position, isPlaying } =
+        useContext(SequencerContext);
     const sequence = tracks[selectedDrum.padKey] || [
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ];
@@ -30,7 +31,9 @@ const Sequencer = () => {
                             " " +
                             (idx % 4 !== 0 ? "" : styles.FirstBeat) +
                             " " +
-                            (idx !== position ? "" : styles.PointerStepActive)
+                            (idx === position && (isPlaying || position !== 0)
+                                ? styles.PointerStepActive
+                                : "")
                         }
                     ></span>
                 ))}
