@@ -23,28 +23,26 @@ export const SequencerProvider = ({ children }) => {
         v: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     });
     const [position, setPosition] = useState(0);
-    const [isPlaying, setIsPlaying] = useState(false);
+    const [isPlaying, setIsPlaying] = useState(true);
     const [bpm, setBpm] = useBpm();
 
+    const [intervalID, setIntervalID] = useState("");
+
     const play = () => {
-        if (tracks[1][position]) {
-            window.dispatchEvent(
-                new KeyboardEvent("keydown", {
-                    key: "1",
-                })
-            );
-        }
+        let pos = position;
+        setIntervalID(
+            setInterval(() => {
+                if (pos >= 15) pos = 0;
+                else pos++;
+                setPosition(pos);
+            }, (1000 * 15) / bpm)
+        );
     };
 
     useEffect(() => {
-        if (isPlaying) {
-            play();
-            setTimeout(() => {
-                if (position >= 15) setPosition(0);
-                else setPosition(position + 1);
-            }, (1000 * 15) / bpm);
-        }
-    }, [position, isPlaying]);
+        if (isPlaying) play();
+        else clearInterval(intervalID);
+    }, [isPlaying]);
 
     return (
         <SequencerContext.Provider

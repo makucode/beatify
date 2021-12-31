@@ -31,5 +31,5 @@ export const pads = [
     { name: "Kick", full: "Kick 4", padKey: "y", sound: kick4 },
     { name: "Clap", full: "Clap 2", padKey: "x", sound: clap2 },
     { name: "Perc", full: "Percussion 2", padKey: "c", sound: perc2 },
-    { name: "Perc", full: "Percussion 3", padKey: "v/z", sound: perc3 },
+    { name: "Perc", full: "Percussion 3", padKey: "v", sound: perc3 },
 ];

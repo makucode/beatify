@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
-import useSound from "use-sound";
+import React, { useEffect, useContext } from "react";
+import { useState } from "react/cjs/react.development";
 import { SelectedDrumContext } from "../../contexts/SelectedDrumContext";
 import useKeyPress from "../../hooks/useKeyPress";
 import styles from "../../styles/drumpad/Drumpad.module.scss";
@@ -9,17 +9,9 @@ const Drumpad = ({ name, padKey, sound, color, full }) => {
     const { setSelectedDrum } = useContext(SelectedDrumContext);
     const keyPressed = useKeyPress(padKey);
 
-    const [playSound] = useSound(sound, { volume: 0.25 });
-
-    const play = () => {
-        setClicked(true);
-        playSound();
-        setTimeout(() => setClicked(false), 100);
-    };
-
     useEffect(() => {
         if (keyPressed) {
-            play();
+            //TRIGGER PAD
         }
     }, [keyPressed]);
 
@@ -30,8 +22,8 @@ const Drumpad = ({ name, padKey, sound, color, full }) => {
             }
             style={{ backgroundColor: color }}
             onClick={() => {
-                play();
                 setSelectedDrum({ full, padKey });
+                //TRIGGER PAD
             }}
         >
             <span className={styles.DrumpadKey}>{padKey}</span>
