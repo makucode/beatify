@@ -10,6 +10,20 @@ body {
     background-color: $dark;
 }
 
+button {
+    background-color: transparent;
+    color: $light;
+
+    border-radius: $radiusL;
+    border: $borderNormal;
+    border-color: $borderColor;
+}
+
+button:active {
+    box-shadow: $glow;
+    filter: brightness(1.1);
+}
+
 // App
 
 .App {
@@ -19,5 +33,4 @@ body {
     box-sizing: border-box;
     width: 100vw;
     height: 100vh;
-    /*     background-color: $light; */
 }

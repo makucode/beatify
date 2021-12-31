@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../../styles/controls/Controls.module.scss";
 import Display from "./Display";
+import Reset from "./Reset";
 import Transport from "./Transport";
 
 const Controls = () => {
@@ -8,6 +9,7 @@ const Controls = () => {
         <div className={styles.Controls}>
             <Display />
             <Transport />
+            <Reset />
         </div>
     );
 };
