@@ -1,5 +1,6 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import useBpm from "../hooks/useBpm";
+import { DrumTriggerContext } from "./DrumTriggerContext";
 
 export const SequencerContext = createContext();
 
@@ -24,6 +25,7 @@ export const SequencerProvider = ({ children }) => {
     });
     const [position, setPosition] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
+    const { handleTrigger } = useContext(DrumTriggerContext);
     const [bpm, setBpm] = useBpm();
 
     const [intervalID, setIntervalID] = useState("");
@@ -32,6 +34,11 @@ export const SequencerProvider = ({ children }) => {
         let pos = position;
         setIntervalID(
             setInterval(() => {
+                for (let key in tracks) {
+                    if (tracks[key][pos]) {
+                        handleTrigger(key);
+                    }
+                }
                 if (pos >= 15) pos = 0;
                 else pos++;
                 setPosition(pos);

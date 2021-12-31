@@ -20,7 +20,7 @@ const Reset = () => {
                 className={styles.ResetButton}
                 onClick={() => setTracks({})}
             >
-                Reset Sequencer
+                Reset All
             </button>
         </div>
     );
