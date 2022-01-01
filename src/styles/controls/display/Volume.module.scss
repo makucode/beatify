@@ -1,0 +1,32 @@
+@import "../../globals";
+
+.Volume {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+}
+
+.VolumeKnob {
+    width: 62px;
+    height: 62px;
+    border: $borderNormal;
+    border-color: $borderColor;
+    border-radius: 50px;
+    background-color: transparent;
+
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $light;
+}
+
+.VolumeLabel {
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+}

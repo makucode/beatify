@@ -1,12 +1,13 @@
-import React from "react";
+import { useState } from "react";
 
 const useBpm = (defaultState = 120) => {
-    const [state, setState] = React.useState(defaultState);
+    const [state, setState] = useState(defaultState);
 
     const setBpm = (bpm) => {
-        if (bpm > 200) setState(200);
-        else if (bpm < 1) setState(1);
-        else setState(bpm);
+        bpm = Math.floor(bpm) * 1;
+        if (bpm > 200) return setState(200);
+        else if (bpm <= 0) return setState(1);
+        setState(bpm);
     };
 
     return [state, setBpm];

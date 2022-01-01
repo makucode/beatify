@@ -1,11 +1,12 @@
 import { createContext, useState } from "react";
 import useSound from "use-sound";
+import useVolume from "../hooks/useVolume";
 import { pads } from "../assets/drumpads";
 
 export const DrumTriggerContext = createContext();
 
 export const DrumTriggerProvider = ({ children }) => {
-    const [volume, setVolume] = useState(0.25);
+    const [volume, setVolume] = useVolume(0.25);
 
     const [playKick1] = useSound(pads[0].sound, { volume });
     const [playSnare1] = useSound(pads[1].sound, { volume });
@@ -42,7 +43,6 @@ export const DrumTriggerProvider = ({ children }) => {
         c: { clicked: false },
         v: { clicked: false },
     });
-
     const handleTrigger = (padKey) => {
         setDrumTriggers({ ...drumTriggers, [padKey]: { clicked: true } });
         switch (padKey) {
@@ -104,7 +104,12 @@ export const DrumTriggerProvider = ({ children }) => {
 
     return (
         <DrumTriggerContext.Provider
-            value={{ drumTriggers, handleTrigger, volume, setVolume }}
+            value={{
+                drumTriggers,
+                handleTrigger,
+                volume,
+                setVolume: setVolume,
+            }}
         >
             {children}
         </DrumTriggerContext.Provider>

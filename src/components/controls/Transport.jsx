@@ -43,7 +43,6 @@ const Transport = () => {
             </div>
             <div className={styles.TransportVolume}>
                 <Volume />
-                <span>Volume</span>
             </div>
         </div>
     );

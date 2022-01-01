@@ -1,8 +1,16 @@
-import React from "react";
-import styles from "../../../styles/controls/transport/Volume.module.scss";
+import React, { useContext } from "react";
+import { DrumTriggerContext } from "../../../contexts/DrumTriggerContext";
+import styles from "../../../styles/controls/display/Volume.module.scss";
 
 const Volume = () => {
-    return <div className={styles.Volume}></div>;
+    const { volume, setVolume } = useContext(DrumTriggerContext);
+    const displayVolume = volume * 100 + "%";
+    return (
+        <div className={styles.Volume}>
+            <div className={styles.VolumeKnob}>{displayVolume}</div>
+            <span className={styles.VolumeLabel}>Volume</span>
+        </div>
+    );
 };
 
 export default Volume;
