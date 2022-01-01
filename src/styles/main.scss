@@ -34,3 +34,17 @@ button:active {
     width: 100vw;
     height: 100vh;
 }
+
+// Volume Knob
+
+.knob-markers {
+    stroke: $mid;
+}
+
+.knob-track {
+    stroke: $green;
+}
+
+.knob-value {
+    fill: $light;
+}

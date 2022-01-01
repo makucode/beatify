@@ -2,6 +2,8 @@
 
 .Volume {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     row-gap: 0.5rem;
 }
@@ -9,9 +11,6 @@
 .VolumeKnob {
     width: 62px;
     height: 62px;
-    border: $borderNormal;
-    border-color: $borderColor;
-    border-radius: 50px;
     background-color: transparent;
 
     text-align: center;

@@ -8,6 +8,8 @@ export const DrumTriggerContext = createContext();
 export const DrumTriggerProvider = ({ children }) => {
     const [volume, setVolume] = useVolume(0.25);
 
+    // Loading Drum Sounds with use-sounds
+
     const [playKick1] = useSound(pads[0].sound, { volume });
     const [playSnare1] = useSound(pads[1].sound, { volume });
     const [playHatO1] = useSound(pads[2].sound, { volume });
@@ -24,6 +26,8 @@ export const DrumTriggerProvider = ({ children }) => {
     const [playClap2] = useSound(pads[13].sound, { volume });
     const [playPerc2] = useSound(pads[14].sound, { volume });
     const [playPerc3] = useSound(pads[15].sound, { volume });
+
+    // Refactor! -- CHECK
 
     const [drumTriggers, setDrumTriggers] = useState({
         1: { clicked: false },
@@ -43,6 +47,7 @@ export const DrumTriggerProvider = ({ children }) => {
         c: { clicked: false },
         v: { clicked: false },
     });
+
     const handleTrigger = (padKey) => {
         setDrumTriggers({ ...drumTriggers, [padKey]: { clicked: true } });
         switch (padKey) {
@@ -98,6 +103,7 @@ export const DrumTriggerProvider = ({ children }) => {
                 break;
         }
         setTimeout(() => {
+            console.log(padKey);
             setDrumTriggers({ ...drumTriggers, [padKey]: { clicked: false } });
         }, 100);
     };
