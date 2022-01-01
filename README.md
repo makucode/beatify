@@ -1,6 +1,6 @@
-# Maschine
+# beatify - Drum Machine
 
-This project was built with React and SASS as a [freeCodeCamp project](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-drum-machine).  
+This project was built with React and SASS. It started out as [freeCodeCamp project](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-drum-machine), but since I have a background in audio engineering and music production, I wanted to expand the features of the app and added a step-sequencer and some additional functionality.  
 The drum samples I used are from [808 Trapstep Vol. 2](https://trisamples.com/808-trapstep-pack-vol-2/).
 
 **Contact me: [makucode@gmail.com](makucode@gmail.com)**
