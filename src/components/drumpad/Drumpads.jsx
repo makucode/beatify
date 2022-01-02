@@ -37,6 +37,7 @@ const Drumpads = () => {
                     <Drumpad
                         key={pad.padKey}
                         color={colorSequence[Math.floor(idx / 4)]}
+                        delay={idx}
                         {...pad}
                     />
                 ))}

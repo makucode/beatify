@@ -103,7 +103,6 @@ export const DrumTriggerProvider = ({ children }) => {
                 break;
         }
         setTimeout(() => {
-            console.log(padKey);
             setDrumTriggers({ ...drumTriggers, [padKey]: { clicked: false } });
         }, 100);
     };

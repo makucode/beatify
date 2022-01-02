@@ -48,6 +48,7 @@
     border: $borderNormal;
     border-color: $borderColor;
     cursor: pointer;
+    transition: $transNormal;
 }
 
 .StepActive {

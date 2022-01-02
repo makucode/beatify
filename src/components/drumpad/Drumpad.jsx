@@ -4,7 +4,7 @@ import { SelectedDrumContext } from "../../contexts/SelectedDrumContext";
 import useKeyPress from "../../hooks/useKeyPress";
 import styles from "../../styles/drumpad/Drumpad.module.scss";
 
-const Drumpad = ({ name, padKey, sound, color, full }) => {
+const Drumpad = ({ name, padKey, delay, color, full }) => {
     const { setSelectedDrum } = useContext(SelectedDrumContext);
     const { drumTriggers, handleTrigger } = useContext(DrumTriggerContext);
 
@@ -27,7 +27,10 @@ const Drumpad = ({ name, padKey, sound, color, full }) => {
             className={
                 styles.Drumpad + " " + (clicked ? styles.DrumpadActive : "")
             }
-            style={{ backgroundColor: color }}
+            style={{
+                backgroundColor: color,
+                transitionDelay: delay * 0.1 + 0.1 + "s",
+            }}
             onClick={() => {
                 setSelectedDrum({ full, padKey });
                 handlePadTrigger();
