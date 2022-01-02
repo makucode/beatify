@@ -1,0 +1,30 @@
+@import "../../globals";
+
+.Credits {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    height: 100%;
+    width: 100%;
+
+    color: $light;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    svg {
+        fill: $light;
+        height: 18px;
+        width: 18px;
+        transform: translateY(2px);
+        transition: $transNormal;
+        cursor: pointer;
+    }
+
+    a:hover {
+        svg {
+            fill: $mid;
+        }
+    }
+}
