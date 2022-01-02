@@ -5,6 +5,7 @@ import { DrumTriggerContext } from "./DrumTriggerContext";
 export const SequencerContext = createContext();
 
 export const SequencerProvider = ({ children }) => {
+    // Tracks - "1" for active beat, 0 for inactive
     const [tracks, setTracks] = useState({
         1: ["1", 0, 0, 0, "1", 0, 0, 0, "1", 0, 0, 0, "1", 0, 0, 0],
         2: [0, 0, 0, 0, "1", 0, 0, 0, 0, 0, 0, 0, "1", 0, 0, 0],
@@ -34,11 +35,14 @@ export const SequencerProvider = ({ children }) => {
         let pos = position;
         setIntervalID(
             setInterval(() => {
+                let keys = [];
                 for (let key in tracks) {
                     if (tracks[key][pos]) {
-                        handleTrigger(key);
+                        keys.push(key);
                     }
                 }
+                handleTrigger(keys);
+
                 if (pos >= 15) pos = 0;
                 else pos++;
                 setPosition(pos);
@@ -46,6 +50,7 @@ export const SequencerProvider = ({ children }) => {
         );
     };
 
+    // Plays when isPlaying changes to true, stops active loop if isPlaying changes to false
     useEffect(() => {
         if (isPlaying) play();
         else clearInterval(intervalID);

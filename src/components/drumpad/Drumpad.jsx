@@ -13,7 +13,7 @@ const Drumpad = ({ name, padKey, delay, color, full }) => {
     const keyPressed = useKeyPress(padKey);
 
     const handlePadTrigger = () => {
-        handleTrigger(padKey);
+        handleTrigger([padKey]);
     };
 
     useEffect(() => {

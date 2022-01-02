@@ -2,14 +2,15 @@ import { createContext, useState } from "react";
 import useSound from "use-sound";
 import useVolume from "../hooks/useVolume";
 import { pads } from "../assets/drumpads";
+import { useEffect } from "react/cjs/react.development";
 
 export const DrumTriggerContext = createContext();
 
 export const DrumTriggerProvider = ({ children }) => {
+    // Drum Volume
     const [volume, setVolume] = useVolume(0.25);
 
-    // Loading Drum Sounds with use-sounds
-
+    // Loading Drum Sounds with use-sound
     const [playKick1] = useSound(pads[0].sound, { volume });
     const [playSnare1] = useSound(pads[1].sound, { volume });
     const [playHatO1] = useSound(pads[2].sound, { volume });
@@ -27,83 +28,79 @@ export const DrumTriggerProvider = ({ children }) => {
     const [playPerc2] = useSound(pads[14].sound, { volume });
     const [playPerc3] = useSound(pads[15].sound, { volume });
 
-    // Refactor! -- CHECK
-
-    const [drumTriggers, setDrumTriggers] = useState({
-        1: { clicked: false },
-        2: { clicked: false },
-        3: { clicked: false },
-        4: { clicked: false },
-        q: { clicked: false },
-        w: { clicked: false },
-        e: { clicked: false },
-        r: { clicked: false },
-        a: { clicked: false },
-        s: { clicked: false },
-        d: { clicked: false },
-        f: { clicked: false },
-        y: { clicked: false },
-        x: { clicked: false },
-        c: { clicked: false },
-        v: { clicked: false },
+    // Keep track if drum is triggered or not
+    const [drumTriggers, setDrumTriggers] = useState(() => {
+        let drums = {};
+        for (const pad of pads) {
+            drums[pad.padKey] = { clicked: false };
+        }
+        return drums;
     });
 
-    const handleTrigger = (padKey) => {
-        setDrumTriggers({ ...drumTriggers, [padKey]: { clicked: true } });
-        switch (padKey) {
-            case "1":
-                playKick1();
-                break;
-            case "2":
-                playSnare1();
-                break;
-            case "3":
-                playHatO1();
-                break;
-            case "4":
-                playHatC1();
-                break;
-            case "q":
-                playKick2();
-                break;
-            case "w":
-                playSnare2();
-                break;
-            case "e":
-                playHatO2();
-                break;
-            case "r":
-                playCrash();
-                break;
-            case "a":
-                playKick3();
-                break;
-            case "s":
-                playClap1();
-                break;
-            case "d":
-                playPerc1();
-                break;
-            case "f":
-                play808();
-                break;
-            case "y":
-                playKick4();
-                break;
-            case "x":
-                playClap2();
-                break;
-            case "c":
-                playPerc2();
-                break;
-            case "v":
-                playPerc3();
-                break;
-            default:
-                break;
-        }
+    useEffect(() => {
+        console.log(drumTriggers);
+    }, [drumTriggers]);
+
+    const handleTrigger = (padKeys) => {
+        let triggered = {};
+        padKeys.forEach((key) => {
+            triggered[key] = { clicked: true };
+            switch (key) {
+                case "1":
+                    playKick1();
+                    break;
+                case "2":
+                    playSnare1();
+                    break;
+                case "3":
+                    playHatO1();
+                    break;
+                case "4":
+                    playHatC1();
+                    break;
+                case "q":
+                    playKick2();
+                    break;
+                case "w":
+                    playSnare2();
+                    break;
+                case "e":
+                    playHatO2();
+                    break;
+                case "r":
+                    playCrash();
+                    break;
+                case "a":
+                    playKick3();
+                    break;
+                case "s":
+                    playClap1();
+                    break;
+                case "d":
+                    playPerc1();
+                    break;
+                case "f":
+                    play808();
+                    break;
+                case "y":
+                    playKick4();
+                    break;
+                case "x":
+                    playClap2();
+                    break;
+                case "c":
+                    playPerc2();
+                    break;
+                case "v":
+                    playPerc3();
+                    break;
+                default:
+                    break;
+            }
+        });
+        setDrumTriggers({ ...drumTriggers, ...triggered });
         setTimeout(() => {
-            setDrumTriggers({ ...drumTriggers, [padKey]: { clicked: false } });
+            setDrumTriggers({ ...drumTriggers, padKeys: { clicked: false } });
         }, 100);
     };
 
