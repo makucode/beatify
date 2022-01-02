@@ -3,6 +3,7 @@
 .Credits {
     display: flex;
     align-items: center;
+    justify-content: center;
     column-gap: 0.5rem;
     height: 100%;
     width: 100%;
@@ -27,4 +28,9 @@
             fill: $mid;
         }
     }
+}
+
+.CreditsCredits {
+    display: flex;
+    column-gap: 0.5rem;
 }

@@ -24,6 +24,17 @@ button:active {
     filter: brightness(1.1);
 }
 
+a {
+    color: $mid;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: $transNormal;
+}
+
+a:hover {
+    color: $light;
+}
+
 // App
 
 .App {
@@ -33,6 +44,30 @@ button:active {
     box-sizing: border-box;
     width: 100vw;
     height: 100vh;
+}
+
+@media screen and (max-width: $brWL), screen and (max-height: $brHL) {
+    .App {
+        transform: scale(0.85);
+    }
+}
+
+@media screen and (max-width: 1030px), screen and (max-height: 540px) {
+    .App {
+        transform: scale(0.75);
+    }
+}
+
+@media screen and (max-width: 910px), screen and (max-height: 470px) {
+    .App {
+        transform: scale(0.6);
+    }
+}
+
+@media screen and (max-width: 730px), screen and (max-height: 380px) {
+    .App {
+        transform: scale(0.5);
+    }
 }
 
 // Volume Knob

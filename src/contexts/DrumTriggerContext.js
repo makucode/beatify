@@ -37,10 +37,6 @@ export const DrumTriggerProvider = ({ children }) => {
         return drums;
     });
 
-    useEffect(() => {
-        console.log(drumTriggers);
-    }, [drumTriggers]);
-
     const handleTrigger = (padKeys) => {
         let triggered = {};
         padKeys.forEach((key) => {

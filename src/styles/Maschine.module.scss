@@ -3,9 +3,12 @@
 .Maschine {
     width: $maschineWL;
     height: $maschineHL;
+    padding: 3rem;
+    box-sizing: border-box;
 
     display: flex;
-    justify-content: space-around;
+    column-gap: 3rem;
+    justify-content: center;
     align-items: center;
 
     border-radius: $radiusL;
@@ -25,5 +28,11 @@
         box-shadow: rgba(22, 31, 39, 0.42) 0px 60px 123px -25px,
             rgba(19, 26, 32, 0.08) 0px 35px 75px -35px;
         opacity: 1;
+    }
+}
+
+@media screen and (max-width: $brWL), screen and (max-height: $brHL) {
+    .Maschine {
+        animation: none;
     }
 }
