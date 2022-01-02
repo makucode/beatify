@@ -1,0 +1,38 @@
+@import "globals";
+
+.Alert {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.AlertContent {
+    background-color: $light;
+    color: $dark;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 2rem 3rem;
+    border-radius: $radiusL;
+    box-shadow: $shadow;
+}
+
+.AlertButton {
+    display: block;
+    margin: 0 auto;
+    margin-top: 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: $dark;
+    padding: 1rem;
+    border: none;
+}
+
+.Hide {
+    display: none;
+}
