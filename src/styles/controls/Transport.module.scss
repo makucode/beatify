@@ -67,3 +67,8 @@
     flex-direction: column;
     color: $light;
 }
+
+.TransportTrigger {
+    box-shadow: $glow;
+    filter: brightness(1.1);
+}

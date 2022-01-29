@@ -24,6 +24,7 @@ export const SequencerProvider = ({ children }) => {
         c: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         v: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     });
+
     const [position, setPosition] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
     const { handleTrigger } = useContext(DrumTriggerContext);
